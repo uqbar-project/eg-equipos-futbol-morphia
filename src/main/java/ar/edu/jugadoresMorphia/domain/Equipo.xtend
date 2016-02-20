@@ -18,6 +18,7 @@ class Equipo implements Serializable {
 	@Property("equipo")
 	String nombre
 	
+	// Se puede anotar con @Reference pero Morphia se da cuenta
 	List<Jugador> jugadores
 	
 	new() {

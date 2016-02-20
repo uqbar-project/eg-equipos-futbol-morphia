@@ -20,6 +20,7 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 		morphia = new Morphia => [
 			map(typeof(Equipo)).map(typeof(Jugador))
 			ds = createDatastore(mongo, "local")
+			ds.ensureIndexes
 		]
 		println("Conectado a MongoDB. Bases: " + ds.getDB.collectionNames)
 	}
