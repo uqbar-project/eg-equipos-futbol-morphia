@@ -29,7 +29,7 @@ Luego sí, podés correr los tests del proyecto Xtend, que verifica
 * que hay dos jugadores que comienzan con "Casta" (Castagno de Tigre y Dino Castaño de Boca)
 
 ## Proyecto
-El proyecto base de Xtend está usando el framework [Morphia - un ODM contra MongoDB](http://mongodb.github.io/morphia/).
+El proyecto base de Xtend está usando el framework [Morphia](http://mongodb.github.io/morphia/) que es un OD/M (Object Document Mapper) contra MongoDB.
 
 **IMPORTANTE:** Usar la versión 1.2.1 o superior de Morphia ya que la anterior no se integra correctamente con Arena.
 
