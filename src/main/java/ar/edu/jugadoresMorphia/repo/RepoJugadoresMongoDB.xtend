@@ -2,11 +2,9 @@ package ar.edu.jugadoresMorphia.repo
 
 import ar.edu.jugadoresMorphia.domain.Equipo
 import ar.edu.jugadoresMorphia.domain.Jugador
-import com.mongodb.AggregationOptions
 import com.mongodb.MongoClient
 import java.util.ArrayList
 import java.util.List
-import org.bson.Document
 import org.mongodb.morphia.Datastore
 import org.mongodb.morphia.Morphia
 
