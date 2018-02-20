@@ -1,5 +1,8 @@
 # Equipos de fútbol - Persistencia en MongoDB con Morphia
 
+[![Build Status](https://travis-ci.org/uqbar-project/eg-equipos-futbol-morphia.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-equipos-futbol-morphia) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-equipos-futbol-morphia/badge.svg?branch=master&service=github)](https://coveralls.io/github/uqbar-project/eg-equipos-futbol-morphia?branch=master&service=github)
+
+
 ## Objetivo
 Testea el mapeo de una [aplicación de planteles de equipos de fútbol](https://github.com/uqbar-project/eg-equipos-futbol-mongodb/wiki) con MongoDB. 
 
