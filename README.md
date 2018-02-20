@@ -18,12 +18,14 @@ $ sudo service mongod start
 
 En la carpeta [scripts](scripts) vas a encontrar dos archivos:
 
-* [Script Jugadores](scripts/Script Jugadores.txt) para ejecutarlo en el shell de MongoDB (ejecutable mongo). Este script inserta datos de varios equipos de fútbol con sus jugadores.
-* [Queries Jugadores](scripts/Queries Jugadores.txt) con queries de ejemplo para probar directamente en el shell.
+* [Script Jugadores](scripts/Script_Jugadores.js) para ejecutarlo en el shell de MongoDB (ejecutable mongo). Este script inserta datos de varios equipos de fútbol con sus jugadores.
+* [Queries Jugadores](scripts/Queries_Jugadores.js) con queries de ejemplo para probar directamente en el shell.
 
 Acá te mostramos cómo correr los scripts con [Robomongo](https://robomongo.org/) un cliente MongoDB con algunas prestaciones gráficas:
 
 ![video](video/demo.gif)
+
+**Los scripts deberías ejecutarlos en la base de datos "test"**. Si elegís otra base tenés que modificar el string de conexión en la clase Xtend _RepoJugadoresMongoDB_.
 
 Luego sí, podés correr los tests del proyecto Xtend, que verifica
 

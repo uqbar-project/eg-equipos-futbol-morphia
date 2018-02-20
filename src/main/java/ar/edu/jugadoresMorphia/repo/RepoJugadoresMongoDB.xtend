@@ -17,7 +17,7 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 		val mongo = new MongoClient("localhost", 27017)
 		morphia = new Morphia => [
 			map(typeof(Equipo)).map(typeof(Jugador))
-			ds = createDatastore(mongo, "local")
+			ds = createDatastore(mongo, "test") // O "local", dependiendo dónde lo corras
 			ds.ensureIndexes
 		]
 		println("Conectado a MongoDB. Bases: " + ds.getDB.collectionNames)
@@ -27,7 +27,7 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 		var List<Jugador> jugadores = new ArrayList<Jugador>
 
 		// 
-		if (jugadorBusqueda.equipo != null) {
+		if (jugadorBusqueda.equipo !== null) {
 			val iterator = ds.find(typeof(Equipo)).field("equipo").equal(jugadorBusqueda.nombreEquipo).iterator
 
 			if (iterator.hasNext) {
@@ -38,7 +38,7 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 		}
 
 		val nombreComienzaCon = jugadorBusqueda.nombreComienzaCon
-		if (nombreComienzaCon != null) {
+		if (nombreComienzaCon !== null) {
 			val query = ds.createQuery(typeof(Equipo))
 				.field("jugadores.nombre")
 				.containsIgnoreCase(jugadorBusqueda.nombreComienzaCon)

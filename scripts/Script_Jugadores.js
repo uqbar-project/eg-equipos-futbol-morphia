@@ -1,3 +1,5 @@
+db.createCollection('jugadores')
+
 db.jugadores.save({equipo: "Tigre", jugadores: [{nombre: "Albil, Damián", posicion: "Arquero"}
 , {nombre: "García, Javier", posicion: "Arquero"}
 , {nombre: "Navarro, Nicolás", posicion: "Arquero"}
@@ -33,7 +35,7 @@ db.jugadores.save({equipo: "Tigre", jugadores: [{nombre: "Albil, Damián", posic
 , {nombre: "Leguizamón, Leandro", posicion: "Delantero"}
 , {nombre: "Sand, José", posicion: "Delantero"}
 , {nombre: "Vitti, Pablo", posicion: "Delantero"}
-]});
+]})
 
 
 db.jugadores.save({equipo: "Boca", jugadores: [{nombre: "D\\'Angelo, Sebastián", posicion: "Arquero"}
@@ -72,7 +74,7 @@ db.jugadores.save({equipo: "Boca", jugadores: [{nombre: "D\\'Angelo, Sebastián"
 , {nombre: "Mana, Nicolás", posicion: "Delantero"}
 , {nombre: "Martínez, Juan Manuel", posicion: "Delantero"}
 , {nombre: "Riaño, Claudio", posicion: "Delantero"}
-]});
+]})
 
 db.jugadores.save({equipo:   "Ríver", jugadores: [{nombre: "Barovero, Marcelo", posicion: "Arquero"}
 , {nombre: "Chichizola, Leandro", posicion: "Arquero"}
@@ -101,6 +103,4 @@ db.jugadores.save({equipo:   "Ríver", jugadores: [{nombre: "Barovero, Marcelo",
 , {nombre: "Kaprof, Juan Cruz", posicion: "Delantero"}
 , {nombre: "Mora, Rodrigo", posicion: "Delantero"}
 , {nombre: "Simeone, Giovanni", posicion: "Delantero"}
-]});
-
-
+]})
