@@ -1,7 +1,6 @@
 package ar.edu.jugadoresMorphia.domain
 
 import java.io.Serializable
-import java.util.ArrayList
 import java.util.List
 import org.bson.types.ObjectId
 import org.eclipse.xtend.lib.annotations.Accessors
@@ -16,18 +15,15 @@ class Equipo implements Serializable {
 	@Id ObjectId id
 	
 	@Property("equipo")
-	String nombre
+	String nombre = ""
 	
 	// Se puede anotar con @Reference pero Morphia se da cuenta
-	List<Jugador> jugadores
+	List<Jugador> jugadores = newArrayList
 	
-	new() {
-		this("")
-	}
+	new() {	}
 	
 	new(String nombre) {
 		this.nombre = nombre
-		this.jugadores = new ArrayList<Jugador>
 	}
 	
 }
