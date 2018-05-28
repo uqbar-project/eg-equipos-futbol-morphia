@@ -28,7 +28,8 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 
 		// 
 		if (jugadorBusqueda.equipo !== null) {
-			val iterator = ds.find(typeof(Equipo)).field("equipo").equal(jugadorBusqueda.nombreEquipo).iterator
+			val iterator = ds.find(typeof(Equipo))
+				.field("equipo").equal(jugadorBusqueda.nombreEquipo).iterator
 
 			if (iterator.hasNext) {
 				jugadores = (iterator.next as Equipo).jugadores

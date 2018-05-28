@@ -1,6 +1,6 @@
-db.createCollection('jugadores')
+db.createCollection('equipos')
 
-db.jugadores.save({equipo: "Tigre", jugadores: [{nombre: "Albil, Damián", posicion: "Arquero"}
+db.equipos.save({equipo: "Tigre", jugadores: [{nombre: "Albil, Damián", posicion: "Arquero"}
 , {nombre: "García, Javier", posicion: "Arquero"}
 , {nombre: "Navarro, Nicolás", posicion: "Arquero"}
 , {nombre: "Alvacete, Juan", posicion: "Defensor"}
@@ -38,7 +38,7 @@ db.jugadores.save({equipo: "Tigre", jugadores: [{nombre: "Albil, Damián", posic
 ]})
 
 
-db.jugadores.save({equipo: "Boca", jugadores: [{nombre: "D\\'Angelo, Sebastián", posicion: "Arquero"}
+db.equipos.save({equipo: "Boca", jugadores: [{nombre: "D\\'Angelo, Sebastián", posicion: "Arquero"}
 , {nombre: "Orion, Agustín", posicion: "Arquero"}
 , {nombre: "Trípodi, Emanuel", posicion: "Arquero"}
 , {nombre: "Vicentini, Manuel", posicion: "Arquero"}
@@ -76,7 +76,7 @@ db.jugadores.save({equipo: "Boca", jugadores: [{nombre: "D\\'Angelo, Sebastián"
 , {nombre: "Riaño, Claudio", posicion: "Delantero"}
 ]})
 
-db.jugadores.save({equipo:   "Ríver", jugadores: [{nombre: "Barovero, Marcelo", posicion: "Arquero"}
+db.equipos.save({equipo:   "Ríver", jugadores: [{nombre: "Barovero, Marcelo", posicion: "Arquero"}
 , {nombre: "Chichizola, Leandro", posicion: "Arquero"}
 , {nombre: "Rodríguez, Nicolás", posicion: "Arquero"}
 , {nombre: "Alvarez Balanta, Eder", posicion: "Defensor"}
