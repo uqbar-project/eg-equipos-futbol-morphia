@@ -11,11 +11,10 @@ import org.mongodb.morphia.Morphia
 class RepoJugadoresMongoDB implements RepoJugadores {
 
 	Datastore ds
-	Morphia morphia
 
 	new() {
 		val mongo = new MongoClient("localhost", 27017)
-		morphia = new Morphia => [
+		new Morphia => [
 			map(typeof(Equipo)).map(typeof(Jugador))
 			ds = createDatastore(mongo, "test") // O "local", dependiendo dónde lo corras
 			ds.ensureIndexes
