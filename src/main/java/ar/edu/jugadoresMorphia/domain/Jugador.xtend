@@ -26,7 +26,11 @@ class Jugador implements Serializable {
 	}	
 	
 	override equals(Object otro) {
-		nombre.equals((otro as Jugador).nombre)
+		try {
+			return nombre.equals((otro as Jugador).nombre)
+		} catch (ClassCastException e) {
+			return false
+		}
 	}
 	
 	override hashCode() {
