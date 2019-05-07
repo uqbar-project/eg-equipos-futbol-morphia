@@ -15,7 +15,7 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 	new() {
 		val mongo = new MongoClient("localhost", 27017)
 		new Morphia => [
-			map(typeof(Equipo)).map(typeof(Jugador))
+			map(Equipo).map(Jugador)
 			ds = createDatastore(mongo, "test") // O "local", dependiendo dónde lo corras
 			ds.ensureIndexes
 		]
@@ -23,41 +23,44 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 	}
 
 	override getJugadores(JugadorBusqueda jugadorBusqueda) {
-		var List<Jugador> jugadores = new ArrayList<Jugador>
-
 		// 
 		if (jugadorBusqueda.equipo !== null) {
-			val iterator = ds.find(typeof(Equipo))
-				.field("equipo").equal(jugadorBusqueda.nombreEquipo).iterator
+			val iterator = ds.find(Equipo)
+				.field("equipo").equal(jugadorBusqueda.nombreEquipo)
+				.iterator
 
 			if (iterator.hasNext) {
-				jugadores = (iterator.next as Equipo).jugadores
+				val jugadores = (iterator.next as Equipo).jugadores
+				println("*/Búsqueda x Equipo: " + jugadorBusqueda.nombreEquipo)
+				println("*/Resultado: " + jugadores)
+				println("****************************************")
+				return jugadores
 			}
-			println("1/Resultado: " + jugadores)
-			println("****************************************")
 		}
 
 		val nombreComienzaCon = jugadorBusqueda.nombreComienzaCon
 		if (nombreComienzaCon !== null) {
+			val List<Jugador> jugadores = new ArrayList<Jugador>
 			val query = ds.createQuery(typeof(Equipo))
 				.field("jugadores.nombre")
-				.containsIgnoreCase(jugadorBusqueda.nombreComienzaCon)
+				.containsIgnoreCase(nombreComienzaCon)
 
 			val iterator = ds
 				.createAggregation(typeof(Equipo))
 				.unwind("jugadores")
 				.match(query)
 				.aggregate(typeof(Equipo))
-			
-			while (iterator.hasNext) {
-				val equipo = iterator.next as Equipo
-				println("jugadores: " + equipo.jugadores)
+
+			iterator.forEach [
+				val equipo = it as Equipo
 				jugadores.addAll(equipo.jugadores)
-			}
+			]			
+			
+			println("*/Búsqueda x Nombre: " + jugadorBusqueda.nombreComienzaCon)
 			println("*/Resultado: " + jugadores)
 			println("****************************************")
+			return jugadores
 		}
-		jugadores
 	}
 
 }
