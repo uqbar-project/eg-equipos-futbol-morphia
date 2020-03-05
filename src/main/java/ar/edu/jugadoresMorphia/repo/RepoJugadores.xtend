@@ -45,15 +45,15 @@ class RepoJugadoresMongoDB implements RepoJugadores {
 		val nombreComienzaCon = jugadorBusqueda.nombreComienzaCon
 		if (nombreComienzaCon !== null) {
 			val List<Jugador> jugadores = new ArrayList<Jugador>
-			val query = ds.createQuery(typeof(Equipo))
+			val query = ds.createQuery(Equipo)
 				.field("jugadores.nombre")
 				.containsIgnoreCase(nombreComienzaCon)
 
 			val iterator = ds
-				.createAggregation(typeof(Equipo))
+				.createAggregation(Equipo)
 				.unwind("jugadores")
 				.match(query)
-				.aggregate(typeof(Equipo))
+				.aggregate(Equipo)
 
 			iterator.forEach [
 				val equipo = it as Equipo
