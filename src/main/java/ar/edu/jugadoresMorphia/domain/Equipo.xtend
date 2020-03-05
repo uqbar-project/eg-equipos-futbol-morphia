@@ -20,10 +20,4 @@ class Equipo implements Serializable {
 	// Se puede anotar con @Reference pero Morphia se da cuenta
 	List<Jugador> jugadores = newArrayList
 	
-	new() {	}
-	
-	new(String nombre) {
-		this.nombre = nombre
-	}
-	
 }
